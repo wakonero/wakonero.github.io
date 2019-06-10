@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js">
+    </script>
+    <script src="js/js.js"></script>
+
+</head>
+
+<body>
+
+
+    <div id="fullpage">
+
+        <section>
+        <video  src="img/inici.mp4" autoplay loop class="vidd"></video>
+<div>
+            <div id="imgs">
+  <div></div>
+  <div></div>
+  
+  
+  
+  <img src="img/1.png" class="imatge" />
+  <div></div>
+               </div>         </div>
+                    </section>
+        <div class="kont">
+            <video autoplay muted loop>
+                <source src="/img/videoreel.mp4" type="video/mp4" loop>
+                
+
+            </video>
+            <div class="ent">
+    
+                <h1 class="title"><hr><hr></h1>
+                
+                <h2 class="description">
+Hello! I'm Martino.
+                I have a passion for modeling and animation and I enjoy any artistic process related </h2>
+<h1 class="title"><hr><hr></h1>
+            </div>
+        </div>
+        <section class="container col-md-12">
+
+  <div class="labelImg col-sm-6 col-md-4" style="background-image:url(/img/sapo.png)">
+  </div>
+  <div class="labelImg col-sm-6 col-md-4" style="background-image:url(/img/wini.jpeg)"  >
+  </div>
+  <div class="labelImg col-sm-6 col-md-4" style="background-image:url(/img/weapon2.jpeg)">
+  </div>
+  <div class="labelImg col-sm-6 col-md-4" style="background-image:url(/img/weapon.jpeg)">
+  </div>
+            <a href="cv.pdf" download>
+  <div class="labelImg col-sm-6 col-md-4" style="background-image:url(https://staticz.womenalia.com/images/archivos/1501-hew-cv-exito.jpg)" height="100%" width="100%">
+  </div> 
+            </a>
+  <div class="labelImg col-sm-6 col-md-4" style="background-image:url(/img/asdq.jpg)">
+  </div>
+  
+        </section>
+
+        <section>
+            
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+<div class="container2">
+  <div class="background-color">
+    <p>marticop67</p>
+        
+       <p> @gmail.com</p>
+  </div>
+</div>
+
+        </section>
+
+
+
+    </div>
+
+
+    <script>
+        let thumbnails = document.getElementsByClassName('thumbnail');
+        let timeline = document.getElementsByClassName('thumbnail-timeline-progress');
+        let videos = document.querySelectorAll('video');
+        let loader = document.getElementsByClassName('thumbnail-loader');
+
+        for (let i = 0; i < thumbnails.length; i++) {
+            thumbnails[i].addEventListener('mouseover', () => {
+                videos[i].play();
+                timeline[i].style.transition = `width ${videos[i].duration}s linear`
+                timeline[i].style.width = '100%'
+            })
+            thumbnails[i].addEventListener('mouseout', () => {
+                videos[i].currentTime = 0;
+                videos[i].pause();
+                timeline[i].style.transition = `width 0s linear`
+                timeline[i].style.width = '0%'
+            })
+        }
+
+        for (let i = 0; i < videos.length; i++) {
+            videos[i].addEventListener('loadeddata', function() {
+                thumbnails[i].classList.add('thumbnail__loaded');
+            }, false);
+        }
+        
+        $(document).ready(function(){
+  $(".labelImg").click(function(){
+    var foto = $(this).css('background-image');
+    $(".imgFull").css('background-image', foto);
+    $(".lightbox").css("display","block");
+  });
+
+  $(".lightbox").click(function(){
+    $(this).css("display","none");
+ });
+});
+    </script>
+
+</body>
+
+</html>
